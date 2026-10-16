@@ -60,6 +60,20 @@ function rotateXZ(aPoint3d, anAngle)
     return result;
 }
 
+function rotateYZ(aPoint3d, anAngle)
+{
+    const c = Math.cos(anAngle);
+    const s = Math.sin(anAngle);
+
+    const result =
+    {
+        x: aPoint3d.x,
+        y: aPoint3d.y * c - aPoint3d.z * s,
+        z: aPoint3d.x * s + aPoint3d.z * c,
+    };
+    return result;
+}
+
 function animate()
 {
     angle += Math.PI * dt;
